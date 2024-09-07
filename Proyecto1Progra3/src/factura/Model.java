@@ -6,7 +6,7 @@ import java.util.List;
 public class Model {
     private Integer numeroFactura;
     private cliente.Model model;
-    private cajero.Model model;
+    private cajero.Model model2;
     private List<ModelDetalleFactura> detalles;
     private double total;
     private LocalDate fecha;
@@ -14,7 +14,7 @@ public class Model {
     public Model() {
         this.numeroFactura = 0;
         this.model = new cliente.Model();
-        this.model = new cajero.Model();
+        this.model2 = new cajero.Model();
         this.detalles = new ArrayList<>();
         this.total = 0.0;
         this.fecha = LocalDate.now();
@@ -22,7 +22,7 @@ public class Model {
     public Model(Integer numeroFactura, cliente.Model cliente, cajero.Model model, List<ModelDetalleFactura> detalles, double total, LocalDate fecha) {
         this.numeroFactura = numeroFactura;
         this.model = cliente != null ? cliente : new cliente.Model(); // actua como un if else
-        this.model = model != null ? model : new cajero.Model();
+        this.model2 = model != null ? model : new cajero.Model();
         this.detalles = detalles != null ? detalles : new ArrayList<>();
         this.total = total;
         this.fecha = fecha != null ? fecha : LocalDate.now();
@@ -46,11 +46,11 @@ public class Model {
     }
 
     public cajero.Model getCajero() {
-        return model;
+        return model2;
     }
 
     public void setCajero(cajero.Model model) {
-        this.model = model;
+        this.model2 = model;
     }
 
     public List<ModelDetalleFactura> getDetalles() {

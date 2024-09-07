@@ -1,31 +1,31 @@
-package model.producto;
+package producto;
 
-public class Producto {
+public class Model {
     private Integer codigo;
     private String descripcion;
     private String unidadMedida;
     private Double precioBaseUnitario;
     private Integer existencias;
-    private Categoria categoria;
+    private ModelCategoria modelCategoria;
 
     // Constructor sin parámetros
-    public Producto() {
+    public Model() {
         this.codigo = 0;
         this.descripcion = "";
         this.unidadMedida = "";
         this.precioBaseUnitario = 0.0;
         this.existencias = 0;
-        this.categoria = new Categoria();
+        this.modelCategoria = new ModelCategoria();
     }
 
     // Constructor con parámetros
-    public Producto(Integer codigo, String descripcion, String unidadMedida, Double precioBaseUnitario, Integer existencias, Categoria categoria) {
+    public Model(Integer codigo, String descripcion, String unidadMedida, Double precioBaseUnitario, Integer existencias, ModelCategoria modelCategoria) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.unidadMedida = unidadMedida;
         this.precioBaseUnitario = precioBaseUnitario;
         this.existencias = existencias;
-        this.categoria = categoria;
+        this.modelCategoria = modelCategoria;
     }
 
     // Getters y Setters
@@ -69,12 +69,12 @@ public class Producto {
         this.existencias = existencias;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public ModelCategoria getCategoria() {
+        return modelCategoria;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setCategoria(ModelCategoria modelCategoria) {
+        this.modelCategoria = modelCategoria;
     }
 
     @Override
@@ -85,7 +85,7 @@ public class Producto {
                 ", Unidad de Medida='" + unidadMedida + '\'' +
                 ", Precio Unitario=" + precioBaseUnitario +
                 ", Existencias=" + existencias +
-                ", Categoria=" + categoria.getNombre() +
+                ", Categoria=" + modelCategoria.getNombre() +
                 '}';
     }
 }

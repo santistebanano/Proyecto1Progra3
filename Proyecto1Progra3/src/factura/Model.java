@@ -1,31 +1,28 @@
-package model.factura;
-import model.cliente.Cliente;
-import model.cajero.Cajero;
+package factura;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Factura {
+public class Model {
     private Integer numeroFactura;
-    private Cliente cliente;
-    private Cajero cajero;
-    private List<DetalleFactura> detalles;
+    private cliente.Model model;
+    private cajero.Model model;
+    private List<ModelDetalleFactura> detalles;
     private double total;
     private LocalDate fecha;
 
-    // Constructor por defecto
-    public Factura() {
+    public Model() {
         this.numeroFactura = 0;
-        this.cliente = new Cliente();
-        this.cajero = new Cajero();
+        this.model = new cliente.Model();
+        this.model = new cajero.Model();
         this.detalles = new ArrayList<>();
         this.total = 0.0;
         this.fecha = LocalDate.now();
     }
-    public Factura(Integer numeroFactura, Cliente cliente, Cajero cajero, List<DetalleFactura> detalles, double total, LocalDate fecha) {
+    public Model(Integer numeroFactura, cliente.Model cliente, cajero.Model model, List<ModelDetalleFactura> detalles, double total, LocalDate fecha) {
         this.numeroFactura = numeroFactura;
-        this.cliente = cliente != null ? cliente : new Cliente(); // actua como un if else
-        this.cajero = cajero != null ? cajero : new Cajero();
+        this.model = cliente != null ? cliente : new cliente.Model(); // actua como un if else
+        this.model = model != null ? model : new cajero.Model();
         this.detalles = detalles != null ? detalles : new ArrayList<>();
         this.total = total;
         this.fecha = fecha != null ? fecha : LocalDate.now();
@@ -40,27 +37,27 @@ public class Factura {
         this.numeroFactura = numeroFactura;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public cliente.Model getCliente() {
+        return model;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCliente(cliente.Model model) {
+        this.model = model;
     }
 
-    public Cajero getCajero() {
-        return cajero;
+    public cajero.Model getCajero() {
+        return model;
     }
 
-    public void setCajero(Cajero cajero) {
-        this.cajero = cajero;
+    public void setCajero(cajero.Model model) {
+        this.model = model;
     }
 
-    public List<DetalleFactura> getDetalles() {
+    public List<ModelDetalleFactura> getDetalles() {
         return detalles;
     }
 
-    public void setDetalles(List<DetalleFactura> detalles) {
+    public void setDetalles(List<ModelDetalleFactura> detalles) {
         this.detalles = detalles != null ? detalles : new ArrayList<>();
         calcularTotal();
     }
@@ -82,7 +79,7 @@ public class Factura {
     }
     private void calcularTotal() {
         total = 0.0;
-        for (DetalleFactura detalle : detalles) {
+        for (ModelDetalleFactura detalle : detalles) {
             total += detalle.getSubtotal();
         }
     }
@@ -91,8 +88,8 @@ public class Factura {
     public String toString() {
         return "Factura{" +
                 "numeroFactura=" + numeroFactura +
-                ", cliente=" + cliente.getNombre() +
-                ", cajero=" + cajero.getNombre() +
+                ", cliente=" + model.getNombre() +
+                ", cajero=" + model.getNombre() +
                 ", total=" + total +
                 ", fecha=" + fecha +
                 '}';

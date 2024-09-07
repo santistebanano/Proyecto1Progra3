@@ -1,19 +1,19 @@
-package model.cliente;
+package cliente;
 
-public class Cliente {
+public class Model {
     private Integer id;
     private String nombre;
     private String numeroTelefono;
     private String email;
     private double porcentajeDescuento;
-    public Cliente() {
+    public Model() {
         this.id = 0;
         this.nombre = "";
         this.numeroTelefono = "";
         this.email = "";
         this.porcentajeDescuento = 0.0;
     }
-    public Cliente(Integer id, String nombre, String numeroTelefono, String email, double porcentajeDescuento) {
+    public Model(Integer id, String nombre, String numeroTelefono, String email, double porcentajeDescuento) {
         this.id = id;
         this.nombre = nombre;
         this.numeroTelefono = numeroTelefono;

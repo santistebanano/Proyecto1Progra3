@@ -1,17 +1,17 @@
-package model.producto;
+package producto;
 
-public class Categoria {
+public class ModelCategoria {
     private String nombre;
     private String descripcion;
 
     // Constructor sin parámetros
-    public Categoria() {
+    public ModelCategoria() {
         this.nombre = "";
         this.descripcion = "";
     }
 
     // Constructor con parámetros
-    public Categoria(String nombre, String descripcion) {
+    public ModelCategoria(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }

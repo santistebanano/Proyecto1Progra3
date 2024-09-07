@@ -1,13 +1,13 @@
-package model.cajero;
+package cajero;
 
-public class Cajero {
+public class Model {
     private Integer id;
     private String nombre;
-    public Cajero() {
+    public Model() {
         this.id = 0;
         this.nombre = "";
     }
-    public Cajero(Integer id, String nombre) {
+    public Model(Integer id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }

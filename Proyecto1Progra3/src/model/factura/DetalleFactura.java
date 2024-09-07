@@ -15,4 +15,8 @@ public class DetalleFactura {
     public double getSubtotal() {
         return cantidad * precioUnitario;
     }
+
+    public Producto getProducto() {
+        return producto;
+    }
 }

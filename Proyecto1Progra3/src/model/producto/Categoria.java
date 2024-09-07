@@ -15,8 +15,6 @@ public class Categoria {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
-
-    // Getters y Setters
     public String getNombre() {
         return nombre;
     }

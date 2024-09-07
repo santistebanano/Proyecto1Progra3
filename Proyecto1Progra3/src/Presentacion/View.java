@@ -7,7 +7,7 @@ public class View {
     private JTextField textField1;
     private JButton agregarButton;
     private JButton cobrarButton;
-    private JComboBox comboBox1;
+    private JComboBox clientes;
     private JComboBox comboBox2;
     private JTextPane textPane1;
     private JButton buscarButton;
@@ -22,7 +22,5 @@ public class View {
     }
 
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
+
 }

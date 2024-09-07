@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<clientes>
+    <cliente>
+        <nombre>Estrella</nombre>
+        <cedula>12345678</cedula>
+    </cliente>
+    <cliente>
+        <nombre>Katherine</nombre>
+        <cedula>87654321</cedula>
+    </cliente>
+    <cliente>
+        <nombre>Arturo</nombre>
+        <cedula>11223344</cedula>
+    </cliente>
+</clientes>

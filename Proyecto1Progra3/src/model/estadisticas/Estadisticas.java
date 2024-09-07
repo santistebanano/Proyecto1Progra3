@@ -17,10 +17,13 @@ public class Estadisticas {
             this.facturas.add(factura);
         }
     }
+    private boolean facturaMes(LocalDate fechaFactura, LocalDate mes) {
+        return fechaFactura.getYear() == mes.getYear() && fechaFactura.getMonth() == mes.getMonth();
+    }
     public double calcularVentasPorCategoria(String categoria, LocalDate mes) {
         double totalVentas = 0.0;
         for (Factura factura : facturas) {
-            if (esDelMes(factura.getFecha(), mes)) {
+            if (facturaMes(factura.getFecha(), mes)) {
                 for (DetalleFactura detalle : factura.getDetalles()) {
                     Producto producto = detalle.getProducto();
                     if (producto.getCategoria().equals(categoria)) {
@@ -32,18 +35,14 @@ public class Estadisticas {
         return totalVentas;
     }
 
-    public double calcularVentasTotales(LocalDate mes) {
+    public double calculaVentaTotal(LocalDate mes) {
         double totalVentas = 0.0;
         for (Factura factura : facturas) {
-            if (esDelMes(factura.getFecha(), mes)) {
+            if (facturaMes(factura.getFecha(), mes)) {
                 totalVentas += factura.getTotal();
             }
         }
         return totalVentas;
-    }
-
-    private boolean esDelMes(LocalDate fechaFactura, LocalDate mes) {
-        return fechaFactura.getYear() == mes.getYear() && fechaFactura.getMonth() == mes.getMonth();
     }
 
     public List<Factura> getFacturas() {

@@ -6,8 +6,6 @@ public class Cliente {
     private String numeroTelefono;
     private String email;
     private double porcentajeDescuento;
-
-    // Constructor por defecto
     public Cliente() {
         this.id = 0;
         this.nombre = "";
@@ -15,8 +13,6 @@ public class Cliente {
         this.email = "";
         this.porcentajeDescuento = 0.0;
     }
-
-    // Constructor con parámetros
     public Cliente(Integer id, String nombre, String numeroTelefono, String email, double porcentajeDescuento) {
         this.id = id;
         this.nombre = nombre;
@@ -24,11 +20,9 @@ public class Cliente {
         this.email = email;
         this.setPorcentajeDescuento(porcentajeDescuento);
     }
-    // Getters y Setters
     public Integer getId() {
         return id;
     }
-
     public void setId(Integer id) {
         this.id = id;
     }
@@ -61,7 +55,6 @@ public class Cliente {
         return porcentajeDescuento;
     }
 
-    // Validacion de Porcentaje de Descuento
     public void setPorcentajeDescuento(double porcentajeDescuento) {
         this.porcentajeDescuento = porcentajeDescuento;
     }
@@ -69,11 +62,11 @@ public class Cliente {
     @Override
     public String toString() {
         return "Cliente{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", numeroTelefono='" + numeroTelefono + '\'' +
-                ", email='" + email + '\'' +
-                ", porcentajeDescuento=" + porcentajeDescuento +
+                "Identificacion=" + id +
+                ", Nombre='" + nombre + '\'' +
+                ", Numero telefonico ='" + numeroTelefono + '\'' +
+                ", Email ='" + email + '\'' +
+                ", Su porcentaje de descuento es =" + porcentajeDescuento +
                 '}';
     }
 }
